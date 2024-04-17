@@ -1,0 +1,70 @@
+.rating-section {
+    background: linear-gradient(0deg, rgba(20, 31, 52, 0.8), rgba(20, 31, 52, 0.8)), url(../images/rated.png);
+    @include background-image(center, cover, no-repeat);
+    padding: 70px 0 200px;
+    @include media("tablet"){
+        padding: 70px 0 120px;
+    }
+
+    .container {
+        padding-left: 40px;
+        @include media("tablet"){
+            @include media("tablet"){
+                padding: 10px
+            }
+        }
+    }
+
+    .common-data {
+        @include common-content;
+        margin-bottom: 90px;
+
+        .common-data-heading {
+            @include text-styles(45px, 1.5, $light,unset);
+            @include media("tablet"){
+               font-size: 35px;
+            }
+        }
+
+        .subtitle {
+            @include positioning(absolute, 35px, unset, unset, -65px);
+            transform: rotate(-90deg);
+            color: $light;
+            padding-right: 10px;
+            @include media("tablet"){
+                display: none;
+            }
+            &::after {
+                content: "";
+                width: 46px;
+                height: 3px;
+                background: $crimson;
+                display: block;
+                @include positioning(relative, -10px, unset, unset, -52px);
+                @include media("tablet"){
+                    @include positioning(relative, -10px, unset, unset, -52px);  
+                }
+            }
+        }
+    }
+
+    .row>* {
+        margin-top: 0;
+    }
+
+    .rating-data {
+        max-width: 297px;
+        @include media("tablet"){
+            max-width: 100%;
+        
+        }
+
+        h3 {
+            @include text-styles(24px, unset, $light,30px);
+        }
+
+        p {
+            @include text-styles(16px, 1.7, $light,0px);
+        }
+    }
+}

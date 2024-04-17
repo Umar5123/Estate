@@ -1,0 +1,68 @@
+header {
+    background-color: $main-color;
+    font-family: $primary-font;
+    @include media("desktop"){
+        @include positioning(absolute, 0, unset, unset, unset);
+    width: 100%;
+    z-index: 1;
+    }
+    .header-top {
+        background-color: $subtitle-color;
+        color: $light;
+        padding: 12px 0;
+        text-align: center;
+        @include media("tablet"){
+font-size: 14px
+        }
+    }
+
+    .navbar-nav {
+        @include flexbox(space-between, center);
+        width: 100%;
+        padding-bottom: 0;
+        max-width: 635px;
+        @include media("large-desktop"){
+            max-width: 550px;
+            padding: 0 20px;
+        }
+        @include media("desktop"){
+            max-width: 100%;
+        }
+    }
+    .header-logo img{
+        @include media("desktop"){
+            width: 250px;
+        }
+        @include media("tablet"){
+            width: 210px;
+        }
+    }
+
+    
+
+    .navbar .navbar-nav .nav-link {
+        color: $light;
+        padding: 55px 5px;
+        @include media("desktop"){
+            padding: 20px 5px;
+        }
+    }
+
+    .nav-item {
+        @include positioning(relative, unset, 0, 0, 0);
+
+
+        &::after {
+            content: "";
+            height: 5px;
+            width: 0%;
+            background-color: $light;
+            @include positioning(absolute, unset, 0, 0, 0);
+            transition: .5s;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}

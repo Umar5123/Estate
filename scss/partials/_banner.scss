@@ -1,0 +1,47 @@
+.banner-section {
+    background: url(../images/banner.png);
+    @include background-image(center, cover, no-repeat);
+    @include flexbox(center, center);
+    height: calc(100vh - 174px);
+    @include positioning(relative, 0, 0, 0, 0);
+    @include media("desktop"){
+        height: calc(100vh - 119px);
+    }
+    @include media("tablet"){
+        height: calc(100vh - 122px);
+    }
+    &::before {
+        content: "";
+        @include positioning(absolute, 0, unset, 0, unset);
+        background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+        width: 100%;
+        height: calc(100vh - 174px);
+        z-index: -1;
+        @include media("desktop"){
+            height: calc(100vh - 119px);
+        }
+        @include media("tablet"){
+            height: calc(100vh - 122px);
+        }
+    }
+
+    .banner-data {
+        max-width: 934px;
+
+        h1 {
+            @include text-styles(65px, 1.5, $light, 55px);
+            @include media("desktop"){
+                @include text-styles(45px, 1.3, $light, 25px);
+            }
+            @include media("tablet"){
+                @include text-styles(35px, 1.3, $light, 25px);
+            }
+        }
+
+        .commom-btn {
+            // @include commom-btn;
+            @include common-btn($crimson,16px,3px,$primary-font,$light);
+            padding: 24px 30px;
+        }
+    }
+}

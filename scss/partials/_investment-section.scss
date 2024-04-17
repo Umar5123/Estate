@@ -1,0 +1,35 @@
+.investment-section {
+    padding: 90px 0;
+    @include media("tablet"){
+        padding: 40px 0;
+    }
+    .investment-data {
+        max-width: 1035px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h2 {
+        @include text-styles(67px, 1.4, $black, 30px);
+        @include media("desktop"){
+            font-size: 45px;
+        }
+        @include media("tablet"){
+            font-size: 29px;
+        }
+    }
+
+    p {
+        max-width: 748px;
+        @include text-styles(18px, 1.6, $brown, 55px);
+        font-family: $primary-font;
+        margin: 0 auto 55px;
+        text-align: center;
+    }
+
+    a {
+        // @include commom-btn;
+        @include common-btn($crimson, 16px, 3px, $primary-font, $light);
+        padding: 24px 30px;
+    }
+}

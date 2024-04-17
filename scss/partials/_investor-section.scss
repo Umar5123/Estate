@@ -1,0 +1,80 @@
+.investor-section {
+    .container {
+        max-width: 1200px;
+    }
+
+    .investor-data {
+        background-color: $light;
+        padding: 20px 20px 20px 80px;
+        border-radius: 4px;
+        @include positioning(relative, -100px, 0, 0, 0);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        @include media("tablet"){
+            padding: 20px;
+        }
+
+        .common-data {
+            @include common-content;
+            margin-bottom: 90px;
+            @include media("tablet"){
+                
+                margin-bottom: 20px;
+            }
+            .common-data-heading {
+                @include text-styles(45px, 1.5, $black, unset);
+                @include media("tablet"){
+                    font-size: 30px;
+                }
+            }
+
+            .subtitle {
+                @include positioning(absolute, 55px, unset, unset, -90px);
+                transform: rotate(-90deg);
+                @include media("tablet"){
+                    display: none;
+                }
+
+                &::after {
+                    content: "";
+                    width: 46px;
+                    height: 3px;
+                    background: $crimson;
+                    display: block;
+                    @include positioning(relative, -10px, unset, unset, -52px);
+                }
+
+            }
+        }
+
+        .investor-info {
+            max-width: 278px;
+            @include media("tablet"){
+                max-width: 100%;
+            }
+        }
+
+        ul {
+            padding-left: 0;
+            line-height: 2;
+li{
+    padding-left: 15px;
+    @include positioning(relative, 0, 0, 0, 0);
+    font-family: $primary-font;
+
+            &:before {
+                content: "-";
+                display: inline-block;
+                width: 16px;
+                @include positioning(absolute, 0, 0, 0, 5px);
+                
+            }
+        }
+        }
+
+        h3 {
+            @include text-styles(20px, unset, $darkblur, unset);
+        }
+
+    }
+
+}

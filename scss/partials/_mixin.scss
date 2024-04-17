@@ -1,0 +1,66 @@
+@mixin flexbox( $justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+  }
+
+@mixin background-image($position: center, $size: cover, $repeat: no-repeat) {
+    background-position: $position;
+    background-size: $size;
+    background-repeat: $repeat;
+  }
+
+@mixin common-btn($background-color: $light, $font-size: 16px, $border-radius: 3px, $font-family: $primary-font, $color: $light) {
+    background-color: $background-color;
+    font-size: $font-size; 
+    border-radius: $border-radius;
+    font-family: $font-family;
+    color: $color;
+    transition: all .3s;
+    &:hover {
+        background-color: $brown; 
+        color: $light;
+    }
+    @include media("tablet"){
+        padding: 20px 13px;
+        font-size: 14px;
+    }
+}
+
+
+@mixin common-content{
+    max-width: 474px;
+    margin-bottom: 52px;
+    position: relative;
+}
+
+@mixin text-styles($font-size, $line-height, $color, $margin-bottom) {
+    font-size: $font-size;   
+    line-height: $line-height; 
+    color: $color;
+    margin-bottom: $margin-bottom;
+}
+
+
+@mixin positioning($position, $top, $right, $bottom, $left) {
+    position: $position; 
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+$breakpoints: (
+    mobile: 480px,
+    tablet: 767px,
+    desktop: 991px,
+    large-desktop: 1200px,
+    laptop:1250px,
+) !default;
+@mixin media($max-width: null) {
+        @if $max-width !=null {
+            @media (max-width: map-get($breakpoints, $max-width)) {
+            @content;
+        }
+    }
+}

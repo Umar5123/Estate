@@ -1,0 +1,68 @@
+.demo-section {
+    padding: 85px 0 80px;
+    @include media("tablet"){
+        padding: 32px 0 51px;
+    }
+    .container {
+        padding-left: 40px;
+        @include media("tablet"){
+            padding: 10px;
+        }
+    }
+
+    .common-data {
+        @include common-content;
+
+        .common-data-heading {
+            @include text-styles(45px, 1.5, $black,unset);
+            @include media("tablet"){
+                @include text-styles(35px, 1.3, $black,unset);
+            }
+        }
+
+        .subtitle {
+            @include positioning(absolute, 44px, unset, unset, -65px);
+            transform: rotate(-90deg);
+            padding-right: 10px;
+            &::after {
+                content: "";
+                width: 46px;
+                height: 3px;
+                background: $subtitle-color;
+                display: block;
+                @include positioning(relative, -10px, unset, unset, -52px);
+            }
+        }
+    }
+
+    .demo-card {
+        max-width: 366px;
+        padding: 30px;
+        box-shadow: (0px 0px 10px rgba(0, 0, 0, 0.08));
+        @include media("desktop"){
+            padding: 14px;
+        }
+        @include media("tablet"){
+            max-width: 100%;
+        
+        }
+        .demo-card-image {
+            width: 66px;
+            height: 66px;
+            object-fit: contain;
+            margin-bottom: 35px;
+        }
+
+        h3 {
+            @include text-styles(25px, unset, unset,30px);
+            @include media("desktop"){
+                @include text-styles(23px, unset, unset,20px);
+            }
+        }
+
+        p {
+            @include text-styles(16px, 1.7, $brown,0px);
+            font-family: $primary-font;
+        }
+    }
+}
